@@ -130,7 +130,7 @@ onUnmounted(() => {
     top: 0;
     flex-direction: column;
     background: rgba(10, 15, 23, 0.98);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(0.9 rem);
     width: 70%;
     height: 100vh;
     justify-content: center;

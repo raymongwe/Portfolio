@@ -20,11 +20,32 @@
         </div>
         <div class="project-content">
           <h2 class="project-title">{{ project.title }}</h2>
-          <p class="project-description">{{ project.description }}</p>
+          <p class="project-tagline">{{ project.tagline }}</p>
+
+          <div class="project-tech">
+            <i
+              v-for="tech in project.tech"
+              :key="tech.name"
+              :class="tech.icon.split(' ')"
+              :title="tech.name"
+            ></i>
+          </div>
+
           <div class="project-buttons">
             <a :href="project.liveUrl" class="project-button primary">Live Demo</a>
-            <a :href="project.readMore" class="project-button secondary">Read More</a>
+            <button
+              @click="project.expanded = !project.expanded"
+              class="project-button secondary"
+            >
+              {{ project.expanded ? 'Read Less' : 'Read More' }}
+            </button>
           </div>
+
+          <Transition name="slide-fade">
+            <div v-if="project.expanded" class="project-details">
+              <p>{{ project.details }}</p>
+            </div>
+          </Transition>
         </div>
       </div>
     </div>
@@ -32,7 +53,11 @@
 </template>
 
 <script setup>
-import { projects } from '../data/projects.js'
+import { reactive } from 'vue'
+import { projects as projectData } from '../data/projects.js'
+
+// Ensure each project has an 'expanded' property
+const projects = reactive(projectData.map(p => ({ ...p, expanded: false })))
 </script>
 
 <style scoped>
@@ -57,19 +82,14 @@ import { projects } from '../data/projects.js'
   margin: 0 auto;
 }
 
-.card-left {
-  flex-direction: row;
-}
-
-.card-right {
-  flex-direction: row-reverse;
-}
+.card-left { flex-direction: row; }
+.card-right { flex-direction: row-reverse; }
 
 .project-image {
   flex: 1.2;
   max-width: 43.75rem;
   border-radius: 1.25rem;
-  box-shadow: 0 0.625rem 9rem rgba(13,202,240,0.4);
+  box-shadow: 0 0.625rem 9rem rgba(13, 202, 240, 0.4);
 }
 
 .project-screenshot {
@@ -88,16 +108,35 @@ import { projects } from '../data/projects.js'
 .project-title {
   font-size: 2.4rem;
   font-weight: 700;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.5rem;
   color: #fff;
 }
 
-.project-description {
-  font-size: 1.3rem;
-  line-height: 1.8;
-  color: #fff;
-  margin-bottom: 2.5rem;
+.project-tagline {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+  font-style: italic;
 }
+
+.project-tech {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.project-tech i {
+  font-size: 1.8rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.project-tech i:hover { transform: scale(1.2); }
 
 .project-buttons {
   display: flex;
@@ -112,19 +151,20 @@ import { projects } from '../data/projects.js'
   transition: all 0.25s ease;
   cursor: pointer;
   font-size: 1.1rem;
+  border: none;
 }
 
 .primary {
   background-color: #17707e;
   color: white;
-  transition: background-color 0.8s,color 0.8s, transform 0.2s ease;
+  transition: background-color 0.8s, color 0.8s, transform 0.2s ease;
 }
 
 .secondary {
   background-color: #f0f0f0;
   color: #333;
   border: 1px solid gray;
-  transition: background-color 0.8s,color 0.8s, transform 0.2s ease;
+  transition: background-color 0.8s, color 0.8s, transform 0.2s ease;
 }
 
 .primary:hover {
@@ -136,5 +176,34 @@ import { projects } from '../data/projects.js'
   background-color: gray;
   color: #fff;
   transform: scale(1.1) translateY(-0.0625rem);
+}
+
+.project-details {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-left: 3px solid #17707e;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #fff;
+}
+
+/* --- SMOOTH OPEN/CLOSE TRANSITIONS --- */
+
+/* This handles the "In" and "Out" timing */
+.slide-fade-enter-active {
+  transition: all 0.4s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.3s ease-in;
+}
+
+/* This is the state when it is hidden (Both before opening and after closing) */
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(-0.625rem);
+  opacity: 0;
 }
 </style>
