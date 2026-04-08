@@ -76,7 +76,7 @@ export const projects = [
     tech: [
       { name: 'JavaScript', icon: 'devicon-javascript-plain colored' },
       { name: 'React', icon: 'devicon-react-plain colored' },
-      { name: 'Next', icon: 'devicon-nextjs-plain colored' },
+      { name: 'Next', icon: 'devicon-nextjs-plain' },
       { name: 'Tailwind', icon: 'devicon-tailwindcss-plain colored' },
       { name: 'Node', icon: 'devicon-nodejs-plain colored' },
       { name: 'Express', icon: 'devicon-express-original colored' },
@@ -93,7 +93,7 @@ export const projects = [
     tech: [
       { name: 'JavaScript', icon: 'devicon-javascript-plain colored' },
       { name: 'React', icon: 'devicon-react-plain colored' },
-      { name: 'Next', icon: 'devicon-nextjs-plain colored' },
+      { name: 'Next', icon: 'devicon-nextjs-plain' },
       { name: 'Tailwind', icon: 'devicon-tailwindcss-plain colored' },
       { name: 'Node', icon: 'devicon-nodejs-plain colored' },
       { name: 'Express', icon: 'devicon-express-original colored' },
@@ -110,7 +110,7 @@ export const projects = [
     tech: [
       { name: 'JavaScript', icon: 'devicon-javascript-plain colored' },
       { name: 'React', icon: 'devicon-react-plain colored' },
-      { name: 'Next', icon: 'devicon-nextjs-plain colored' },
+      { name: 'Next', icon: 'devicon-nextjs-plain' },
       { name: 'Tailwind', icon: 'devicon-tailwindcss-plain colored' },
       { name: 'Node', icon: 'devicon-nodejs-plain colored' },
       { name: 'Express', icon: 'devicon-express-original colored' },

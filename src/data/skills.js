@@ -60,7 +60,7 @@ export const skills = [
   },
   {
     name: 'Next',
-    icon: 'devicon-nextjs-plain colored',
+    icon: 'devicon-nextjs-plain',
     url: 'https://en.wikipedia.org/wiki/Next.js'
   },
   {
@@ -112,7 +112,7 @@ export const skills = [
   },
   {
     name: 'Flask',
-    icon: 'devicon-flask-original colored',
+    icon: 'devicon-flask-original',
     url: 'https://en.wikipedia.org/wiki/Flask_(web_framework)'
   },
 
@@ -155,7 +155,7 @@ export const skills = [
   // Tools
   {
     name: 'Bash',
-    icon: 'devicon-bash-plain colored',
+    icon: 'devicon-bash-plain',
     url: 'https://en.wikipedia.org/wiki/Bash_(Unix_shell)'
   },
   {

@@ -75,9 +75,10 @@ onUnmounted(() => {
 
 .navbar.scrolled {
   top: 0;
-  padding: 0.8rem 1.25rem;
+  padding: 0.9rem 1.25rem;
   background-color: #110f0f;
   backdrop-filter: blur(12px);
+  margin-top: 0;
 }
 
 .navbar a {

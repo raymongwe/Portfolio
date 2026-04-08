@@ -149,7 +149,7 @@ onMounted(() => {
   display: inline-block;
   color: #34d4ec;
   margin-left: 5px;
-  animation: blink 0.8s infinite;
+  animation: blink 1s infinite;
 }
 
 @keyframes blink {
