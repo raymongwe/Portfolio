@@ -64,9 +64,9 @@ export const skills = [
     url: 'https://en.wikipedia.org/wiki/Next.js'
   },
   {
-  name: 'Nuxt',
-  icon: 'devicon-nuxtjs-plain colored',
-  url: 'https://en.wikipedia.org/wiki/Nuxt.js'
+    name: 'Nuxt',
+    icon: 'devicon-nuxtjs-plain colored',
+    url: 'https://en.wikipedia.org/wiki/Nuxt.js'
   },
   {
     name: 'Bootstrap',
@@ -79,9 +79,9 @@ export const skills = [
     url: 'https://en.wikipedia.org/wiki/Tailwind_CSS'
   },
   {
-  name: 'Vuetify',
-  icon: 'devicon-vuetify-line colored',
-  url: 'https://www.google.com/search?q=vuetify'
+    name: 'Vuetify',
+    icon: 'devicon-vuetify-line colored',
+    url: 'https://www.google.com/search?q=vuetify'
   },
   {
     name: 'Sass',
@@ -154,9 +154,9 @@ export const skills = [
 
   // Tools
   {
-    name: 'Bash',
-    icon: 'devicon-bash-plain',
-    url: 'https://en.wikipedia.org/wiki/Bash_(Unix_shell)'
+    name: 'Vite',
+    icon: 'devicon-vitejs-plain colored',
+    url: 'https://en.wikipedia.org/wiki/Vite_(software)'
   },
   {
     name: 'Git',

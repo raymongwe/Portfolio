@@ -32,7 +32,7 @@
           </div>
 
           <div class="project-buttons">
-            <a :href="project.liveUrl" class="project-button primary">Live Demo</a>
+            <a :href="project.liveUrl" class="project-button primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
             <button
               @click="project.expanded = !project.expanded"
               class="project-button secondary"
